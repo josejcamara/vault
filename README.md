@@ -36,8 +36,16 @@ It can be run with docker:
 > docker run --cap-add=IPC_LOCK -d --name=dev-vault vault  
 
 or using the vault binary
-
 > vault server -dev
 
 You can also start the server using configuration files from a directory:
 > vault server -dev -config /etc/vault
+
+Check the status
+> vault status
+
+*Note*: You may want to use this variable to avoid the cli to try to use the default https entrypoint
+> export VAULT_ADDR=http://127.0.0.1:8200   
+
+Use the root token (output when starting the server) to access the UI for the first time from http://127.0.0.1:8200/ui or the first API interaction:
+> curl --header "X-Vault-Token: $root_token" --request GET $VAULT_ADDR/v1/sys/host-info
