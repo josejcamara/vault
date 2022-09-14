@@ -70,8 +70,8 @@ vault write auth/userpass/login/jose password=jose
 
 # Login with approle
 # > vault path-help auth/approle/login
-roleId <= vault read auth/approle/role/integration/role-id
-secretId <= vault write -force auth/approle/role/integration/secret-id
+roleId=`vault read -field=role_id auth/approle/role/cicd/role-id` 
+secretId=`vault write -field=secret_id -force auth/approle/role/cicd/secret-id`
 
 vault write auth/approle/login role_id=$roleId secret_id=$secretId
 
