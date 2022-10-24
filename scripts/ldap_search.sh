@@ -2,10 +2,12 @@
 
 # -------------------------------------------------------------
 # List all the LDAP groups/users containing a specific policy
+# https://www.vaultproject.io/docs/auth/ldap
+# https://www.vaultproject.io/api-docs/auth/ldap
 # -------------------------------------------------------------
 
 # export VAULT_ADDR='YOUR_VAULT_URL'
-# export VAULT_TOKEN="YOUR_USER_TOKEN"
+# export VAULT_TOKEN="s.yb5YBoKRguTdxE4QAu01P9mQ"
 
 # ------
 TYPE=$1
